@@ -1,0 +1,207 @@
+    /* Importa a fonte General Sans para o Simulador */
+        @import url('https://api.fontshare.com/v2/css?f[]=general-sans@600,400&display=swap');
+
+        /* Estilos específicos do Simulador */
+        .simulator-body {
+            background-color: #12141d;
+            color: white;
+            font-family: 'General Sans', sans-serif;
+            padding: 2rem;
+        }
+        .simulator-body h3 {
+            font-family: 'General Sans', sans-serif;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        .main-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .column {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        details {
+            border: 1px solid #31333F;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            background-color: #1e2130;
+        }
+        summary {
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        details[open] {
+            padding-bottom: 1.5rem;
+        }
+
+        .params-container {
+            border: 1px solid #31333F;
+            border-radius: 8px;
+            padding: 1.5rem;
+            background-color: #1e2130;
+        }
+
+        .input-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        .input-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .input-group label {
+            color: #ddd;
+            margin-bottom: 0.5rem;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .input-group input {
+            background-color: #12141d;
+            color: white;
+            border: 1px solid #31333F;
+            border-radius: 4px;
+            padding: 0.75rem;
+            font-size: 14px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .input-group input:focus {
+            outline: none;
+            border-color: #4A90E2;
+        }
+        
+        .warning-message {
+            background-color: rgba(255, 165, 0, 0.1);
+            border: 1px solid orange;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-size: 14px;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            display: none;
+        }
+        
+        .tooltip-icon {
+            position: relative;
+            cursor: help;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            border: 1px solid #a0a0b0;
+            font-size: 12px;
+            color: #a0a0b0;
+            font-weight: 600;
+        }
+
+        .tooltip-icon::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 130%; 
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: #fff;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            line-height: 1.4;
+            font-weight: 400;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.2s, visibility 0.2s;
+            z-index: 10;
+            width: max-content;
+            max-width: 250px;
+            white-space: normal;
+            text-align: left;
+            border: 1px solid #444;
+        }
+
+        .tooltip-icon:hover::after {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .premise-block {
+            margin-bottom: 10px;
+        }
+        .premise-title {
+            font-weight: normal;
+            font-size: 14px;
+            margin: 0;
+            padding: 0;
+        }
+        .premise-caption {
+            color: #a0a0b0;
+            font-size: 13px;
+            margin: 0;
+            padding: 0;
+            line-height: 1.4;
+        }
+        
+        .custom-table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #1e2130;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .custom-table td {
+            padding: 12px;
+            border-top: 1px solid #12141d;
+            color: white;
+            vertical-align: middle;
+            font-size: 14px;
+        }
+        .custom-table tr:first-child td {
+            border-top: none;
+        }
+        .custom-table td:first-child {
+            font-weight: 600;
+        }
+        .custom-table td:last-child {
+            text-align: right;
+        }
+
+        @media (max-width: 768px) {
+            .simulator-body {
+                padding: 1rem;
+            }
+            .main-container {
+                flex-direction: column;
+            }
+            .input-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        details ul, details ol {
+            padding-left: 20px;
+        }
+
+        details li {
+            margin-bottom: 0.75rem;
+            line-height: 1.5;
+            color: #ccc;
+        }
+
+        strong {
+            font-weight: 600;
+        }
